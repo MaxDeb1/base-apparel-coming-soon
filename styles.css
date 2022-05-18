@@ -1,0 +1,302 @@
+/*** Colors ***/
+:root {
+/* Primary */
+--Desaturated-Red: hsl(0, 36%, 70%);
+--Soft-Red: hsl(0, 93%, 68%);
+
+/* Neutral */
+--Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+/* Gradients */
+--Primary-Linear: linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+--Secondary-Linear: Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+}
+
+/*** Font ***/
+@font-face {
+    font-family: 'bill corporatenarrowW00semibold';
+    src:url('font/bill\ corporatenarrowW00semibold.woff') format('woff'),
+        url('font/bill\ corporatenarrowW00semibold.woff2') format('woff2'),
+        url('font/bill\ corporatenarrowW00semibold.svg') format('svg'),
+        url('font/bill\ corporatenarrowW00semibold.ttf'),
+        url('font/bill\ corporatenarrowW00semibold.eot') format('embedded-opentype'); 
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bill corporate narrow W00 light';
+    src:url('font/bill\ corporate\ narrow\ W00\ light.woff') format('woff'),
+        url('font/bill\ corporate\ narrow\ W00\ light.woff2') format('woff2'),
+        url('font/bill\ corporate\ narrow\ W00\ light.svg') format('svg'),
+        url('font/bill\ corporate\ narrow\ W00\ light.ttf'),
+        url('font/bill\ corporate\ narrow\ W00\ light.eot') format('embedded-opentype'); 
+    font-weight: light;
+    font-style: normal;
+}
+
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 83px;
+    background-color: #fff;
+    margin-left: 8%;
+}
+
+header img {
+    width: auto;
+    height: 1.3rem;
+}
+
+#content {
+    width: 100%;
+}
+
+.photo {
+    width: 100%;
+    min-height: 250px;
+    max-height: 430px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--Desaturated-Red);
+}
+
+.text h1 {
+    text-transform: uppercase;
+    font-family: 'bill corporate narrow W00 light';
+    font-size: 2.45rem;
+    letter-spacing: 13px;
+    line-height: 2.57rem;
+    margin-bottom: 19px;
+}
+
+.text h1 span {
+    font-family: 'bill corporatenarrowW00semibold';
+    letter-spacing: 15px;
+    color: var(--Dark-Grayish-Red);
+}
+
+p {
+    margin: 0 10% 33px 10%;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    line-height: 1.4rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 47px;
+    border: 1px solid var(--Desaturated-Red);
+    border-radius: 50px;
+    margin: 0 8% 0 8.5%;
+}
+
+.field-long {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    width: 75%;
+    height: 100%;
+    border: none;
+    margin-left: 25px;
+}
+
+.field-long:focus {
+    outline: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--Desaturated-Red);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--Desaturated-Red);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--Desaturated-Red);
+  }
+
+.form-group.error::after {
+    content: 'Please provide a valid email';
+    display: block;
+    position: absolute;
+    margin: 10px 0 0 25px;
+    transform: translateY(2.5rem);
+    font-size: 0.8rem;
+    color: var(--Desaturated-Red);
+}
+
+.form-group.error input:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+}
+
+.submitButton {
+    width: 65px;
+    height: 47px;
+    border: none;
+    border-radius: 50px;
+    background: url(images/icon-arrow.svg),
+    linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 16px 13px -3px hsl(0, 80%, 93%);
+    cursor: pointer;
+}
+
+.submitButton:focus {
+    outline: none;
+}
+
+footer {
+    width: 100vw;
+    height: 24px;
+    margin-top: 3rem;
+}
+
+.attribution { 
+    position: absolute;
+    width: 100vw;
+    font-size: 11px; 
+    text-align: center; 
+    margin: 0;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+#desktop {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 57.64% 42.36%;
+        overflow: hidden;
+        }
+
+    #mobile {
+        padding : 38px 26.5% 0 19.8%;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    header {
+        margin-left: 0%;
+        background-color: transparent;
+    }
+
+    header img {
+        width: auto;
+        height: 2rem;
+    }
+
+    .photo {
+        display: none;
+    }
+
+    .text {
+        text-align: left;
+        margin-top: 105px;
+    }
+
+    .text h1 {
+        font-size: 4rem;
+        letter-spacing: 22px;
+        font-weight: 300;
+        line-height: 4.25rem;
+        margin-bottom: 0;
+    }
+
+    .text h1 span {
+        letter-spacing: 20px;
+    }
+
+    p {
+        font-size: 0.97rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.017rem;
+        margin: 26px 0 40px 0;
+    }
+
+    .form-group {
+        height: 57px;
+        margin: 0;
+    }
+
+    .email {
+        margin: 0;
+    }
+
+    .submitButton {
+        width: 104px;
+        height: 57px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+
+    #desktop {
+        display: block;
+    }
+
+    .hero_desktop {
+        height: 100vh;
+/*         overflow: hidden; */
+        text-align: right;
+    }
+
+    .hero_desktop img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .attribution { 
+        text-align: center;
+        transform: translateX(-5%);
+    }
+}
